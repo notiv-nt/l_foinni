@@ -1,0 +1,71 @@
+
+
+.main-header
+	position absolute
+	top 0
+	left 0
+	width 100%
+	padding 33px 0 17px
+	border-bottom 1px solid rgba(#8f8e91, .5)
+	background-color rgba(0, 0, 0, .7)
+	color #fff
+	z-index 5
+	tr padding, background-color
+
+	&.fixed
+		position fixed
+		padding 15px 0
+		background-color rgba(0, 0, 0, .9)
+
+		.navbar
+			margin-bottom 0
+
+		.navbar-nav li a:after
+			bottom 4px
+
+	.navbar-brand
+		height auto
+		padding 5px 5px 5px 15px
+		line-height 1.4
+
+	.navbar-toggle
+		background-color $main-color
+
+		.icon-bar
+			background-color #fff
+
+	.navbar-nav
+
+		li
+			&:hover, &.active, &.current
+				a
+					color $main-color
+					background none
+					color $main-color
+
+					&:after
+						height 2px
+
+			a
+				padding 14px 2px
+				margin 0 19px
+				text-transform uppercase
+				font-weight 300
+				color #fff
+				position relative
+				tr color
+
+				&:focus
+					background none
+
+				&:after
+					content ''
+					position absolute
+					bottom 0
+					left 0
+					right 0
+					height 0
+					background-color $main-color
+					tr height
+
+

@@ -1,0 +1,177 @@
+
+*
+	box-sizing border-box
+
+
+html, body
+	font $font-size/$line-height 'Roboto', sans-serif
+	height 100%
+
+
+body
+	cursor default
+	-webkit-font-smoothing antialiased
+	min-width 320px
+
+	if $text-color
+		color $text-color
+
+
+a
+	cursor pointer
+
+
+.clearfix
+
+	&:after
+		content ""
+		display table
+		height 0
+		width 0
+		clear both
+		visibility hidden
+
+
+img
+	vertical-align top
+
+
+.toggle
+	$color = #fff
+	$thickness = 3px
+
+	background-color transparent
+	border none
+	outline none
+
+	float right
+	width 40px
+	height 27px
+	margin 0
+	display none
+
+	span
+		position relative
+		display block
+
+		&:after,
+		&:before
+			content ""
+			position absolute
+			left 0
+			top -9px
+
+		&:after
+			top 9px
+
+	span, span:after, span:before
+		width 100%
+		height $thickness
+		background-color $color
+		transition all 0.3s
+		backface-visibility hidden
+		border-radius 2px
+
+	/* on activation */
+	&.on span
+		background-color transparent
+
+	&.on span:before
+		transform rotate(45deg) translate(5px, 5px)
+
+	&.on span:after
+		transform rotate(-45deg) translate(7px, -8px)
+
+
+.hidden
+	display none !important
+
+
+.responsive
+	display block
+	width auto
+	max-width 100%
+
+
+.btn
+
+	&-theme
+		background-color $main-color
+		color white
+		border-radius 0
+		font-size toem(16px)
+		tr background-color, color
+
+		&:hover
+			background-color darken($main-color, 10%)
+			color white
+
+	&-themed-hover
+		border 1px solid #9c9a97
+		background transparent
+		color inherit
+		border-radius 0
+		tr background-color, color
+
+		&:hover
+			color white
+			background-color darken($main-color, 10%)
+
+	&-lg
+		padding 10px 50px
+		font-size toem(18px)
+
+
+.social
+	margin -4px
+
+	$size = 40px
+	$color = #8f8e91
+
+	a
+		display inline-block
+		border 2px solid $color
+		width $size
+		height $size
+		margin 4px
+		font-size 20px
+		line-height $size - 5%
+		color $color
+		text-align center
+		tr color, border-color
+
+		&:hover
+			color white
+			border-color @color
+
+
+span.themed
+	color $main-color
+	text-transform uppercase
+
+
+.container-small
+	max-width 920px
+
+
+ul.tags
+	margin-bottom 30px
+
+	li
+		margin 5px 18px
+		color #434243
+		font-size toem(18px)
+
+		&.active, &:hover
+
+			a
+				color $main-color
+				border-bottom-color $main-color
+
+		a
+			color inherit
+			padding 5px 0
+			text-decoration none
+			border-bottom 1px solid transparent
+			tr border-bottom-color, color
+
